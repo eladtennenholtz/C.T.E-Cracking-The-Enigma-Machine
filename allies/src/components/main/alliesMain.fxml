@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="alliesMainComponent" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.main.AlliesMainController">
+    <content>
+        <SplitPane>
+            <items>
+                <AnchorPane fx:id="anchorPaneToShow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1100.0">
+                    <children>
+                        <Label alignment="TOP_CENTER" layoutX="102.0" layoutY="38.0" prefHeight="17.0" prefWidth="600.0" text="Allies">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+
+                        <TabPane fx:id="allTabs" layoutX="2.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <Tab fx:id="dashBoardTab" text="DashBoard">
+                                    <content>
+                                        <fx:include fx:id="dashBoardComponent" source="../dashBoardPage/dashBoard.fxml" />
+                                    </content></Tab>
+                                <Tab fx:id="tabContestAllies" text="Contest">
+                                    <content>
+                                        <fx:include fx:id="contestAlliesPageComponent" source="../contestPage/contestAllies.fxml" />
+                                    </content></Tab>
+                            </tabs>
+                        </TabPane>
+                  <Label fx:id="nameOfLoggedUserLabel" layoutX="750.0" layoutY="28.0" prefHeight="20.0" prefWidth="200.0">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="registrationMainPageLabel" layoutX="722.0" layoutY="68.0" prefHeight="31.0" prefWidth="298.0" textFill="#0ce150">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </content>
+</ScrollPane>

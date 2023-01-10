@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.dashBoardPage.DashBoardMainController">
+   <content>
+      <AnchorPane prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Label layoutX="355.0" layoutY="236.0" text="Contests data">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="choiceBoxContest" layoutX="312.0" layoutY="495.0" prefWidth="150.0" />
+            <Label layoutX="355.0" layoutY="462.0" text="Contest">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="chosenContestLabel" layoutX="318.0" layoutY="539.0" prefHeight="21.0" prefWidth="155.0" textFill="#280dd7">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="226.0" layoutY="539.0" text="Chosen:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="readyToRegisterButton" layoutX="552.0" layoutY="533.0" mnemonicParsing="false" onAction="#readyToRegisterButtonListener" text="Ready!" textFill="#30b567">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <HBox fx:id="hBoxTableView" layoutX="35.0" layoutY="277.0" prefHeight="171.0" prefWidth="840.0">
+               <children>
+                  <TableView fx:id="contestsDataTableView" prefHeight="171.0" prefWidth="840.0">
+                    <columns>
+                      <TableColumn fx:id="colBattle" prefWidth="140.0" text="Battle field" />
+                        <TableColumn fx:id="colUBoat" prefWidth="140.0" text="UBoat name" />
+                        <TableColumn fx:id="colStatus" prefWidth="140.0" text="Status" />
+                        <TableColumn fx:id="colLevel" prefWidth="140.0" text="Level" />
+                        <TableColumn fx:id="colAlliesMax" prefWidth="140.0" text="Allies needed" />
+                        <TableColumn fx:id="colAlliesLogged" prefWidth="140.0" text="Allies registered" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <Label fx:id="isReadyLabel" layoutX="662.0" layoutY="539.0" prefHeight="27.0" prefWidth="297.0" textFill="#0ce150">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" layoutX="362.0" layoutY="8.0" prefHeight="17.0" prefWidth="186.0" text="Teams Agents">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <HBox fx:id="hBoxTeamsAgents" layoutX="24.0" layoutY="46.0" prefHeight="171.0" prefWidth="840.0">
+               <children>
+                  <TableView fx:id="teamsAgentsTableView" prefHeight="171.0" prefWidth="849.0">
+                    <columns>
+                      <TableColumn fx:id="colName" prefWidth="280.0" text="Name" />
+                        <TableColumn fx:id="colThreads" prefWidth="280.0" text="Threads" />
+                      <TableColumn fx:id="colTaskSize" prefWidth="280.0" text="Amount of tasks per pull" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
