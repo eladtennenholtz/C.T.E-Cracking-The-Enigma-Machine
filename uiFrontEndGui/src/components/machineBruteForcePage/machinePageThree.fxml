@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.machineBruteForcePage.MachinePageThreeController">
+   <content>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="145.0" layoutY="26.0" prefHeight="17.0" prefWidth="600.0" text="Current machine configuration">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="currentMachineConfigurationTextArea" editable="false" layoutX="311.0" layoutY="61.0" prefHeight="16.0" prefWidth="305.0" />
+            <Button fx:id="startBruteForceButton" layoutX="297.0" layoutY="474.0" mnemonicParsing="false" onAction="#startBruteForceButtonListener" prefHeight="25.0" prefWidth="62.0" text="Start" textFill="#488044">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label alignment="TOP_CENTER" layoutX="91.0" layoutY="313.0" prefHeight="17.0" prefWidth="77.0" text="Agents">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="53.0" layoutY="387.0" text="Level">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <ChoiceBox fx:id="levelChoiceBox" layoutX="22.0" layoutY="415.0" prefHeight="31.0" prefWidth="104.0" />
+            <Label layoutX="157.0" layoutY="387.0" text="Task size">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextField fx:id="taskSizeTextField" layoutX="149.0" layoutY="418.0" onAction="#taskSizeTextFieldListener" prefHeight="25.0" prefWidth="71.0" />
+            <TextField fx:id="numberOfAgentsTextField" editable="false" layoutX="166.0" layoutY="310.0" prefHeight="25.0" prefWidth="38.0" />
+            <TextArea fx:id="resultsFromDmTextArea" editable="false" layoutX="562.0" layoutY="316.0" prefHeight="230.0" prefWidth="427.0" />
+            <Label alignment="TOP_CENTER" layoutX="60.0" layoutY="120.0" prefHeight="17.0" prefWidth="249.0" text="Encrypt/Decrypt">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="202.0" text="Input">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="inputTextArea" layoutX="109.0" layoutY="192.0" prefHeight="9.0" prefWidth="200.0" />
+            <Label layoutX="46.0" layoutY="264.0" text="Output">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="outputTextArea" editable="false" layoutX="109.0" layoutY="254.0" prefHeight="14.0" prefWidth="200.0" />
+            <Button fx:id="encryptButton" layoutX="347.0" layoutY="222.0" mnemonicParsing="false" onAction="#encryptButtonListener" text="Encrypt" />
+            <HBox fx:id="HBoxDictionary" layoutX="616.0" layoutY="132.0" prefHeight="140.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="listViewDictionary" prefHeight="140.0" prefWidth="201.0" />
+               </children>
+            </HBox>
+            <Label layoutX="677.0" layoutY="98.0" text="Dictionary">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="resetMachineButton" layoutX="353.0" layoutY="262.0" mnemonicParsing="false" onAction="#resetMachineButtonListener" text="Reset" />
+            <HBox fx:id="hBoxForSlider" layoutX="21.0" layoutY="342.0" prefHeight="23.0" prefWidth="396.0">
+               <children>
+                  <Slider fx:id="sliderForAgents" prefHeight="14.0" prefWidth="387.0" />
+               </children>
+            </HBox>
+            <Label fx:id="dmStringForDecode" alignment="TOP_CENTER" layoutX="301.0" layoutY="560.0" prefHeight="20.0" prefWidth="236.0" textFill="#cd1111">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="716.0" layoutY="287.0" text="Dm Decryptions">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="totalTasks" editable="false" layoutX="59.0" layoutY="516.0" prefHeight="38.0" prefWidth="114.0" />
+            <HBox fx:id="HBoxProgress" layoutX="345.0" layoutY="416.0" prefHeight="23.0" prefWidth="200.0">
+               <children>
+                  <ProgressBar fx:id="progressBarDm" prefWidth="200.0" progress="0.0" />
+               </children>
+            </HBox>
+            <Button fx:id="showTotalTasksButton" layoutX="39.0" layoutY="476.0" mnemonicParsing="false" onAction="#showTotalTasksListener" prefHeight="25.0" prefWidth="155.0" text="Show total tasks" />
+            <Label alignment="TOP_CENTER" layoutX="551.0" layoutY="561.0" prefHeight="17.0" prefWidth="127.0" text="Total time of DM" />
+            <TextArea fx:id="totalTimeDm" editable="false" layoutX="677.0" layoutY="551.0" prefHeight="8.0" prefWidth="200.0" />
+            <Button fx:id="pauseButton" layoutX="297.0" layoutY="523.0" mnemonicParsing="false" onAction="#pauseButtonListener" prefHeight="25.0" prefWidth="79.0" text="Pause" />
+            <Button fx:id="resumeButton" layoutX="395.0" layoutY="523.0" mnemonicParsing="false" onAction="#resumeButtonListener" prefHeight="25.0" prefWidth="90.0" text="Resume" />
+            <Button fx:id="stopButton" layoutX="388.0" layoutY="474.0" mnemonicParsing="false" onAction="#stopButtonListener" prefHeight="25.0" prefWidth="62.0" text="Stop" textFill="#da1010">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="percentInProgress" editable="false" layoutX="419.0" layoutY="371.0" prefHeight="35.0" prefWidth="41.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextArea>
+            <Label alignment="TOP_CENTER" layoutX="219.0" layoutY="562.0" prefHeight="17.0" prefWidth="88.0" text="Current :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </content>
+</ScrollPane>

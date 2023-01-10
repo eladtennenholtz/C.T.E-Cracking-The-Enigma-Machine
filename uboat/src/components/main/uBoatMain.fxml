@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="uBoatMainComponent" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.main.UBoatMainController">
+    <content>
+      <SplitPane>
+         <items>
+              <AnchorPane fx:id="anchorPaneToShow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1000.0">
+                  <children>
+                      <Label alignment="TOP_CENTER" layoutX="2.0" layoutY="6.0" prefHeight="17.0" prefWidth="600.0" text="The Enigma Machine">
+                          <font>
+                              <Font size="20.0" />
+                          </font>
+                      </Label>
+                      <Button fx:id="loadFileButton" layoutX="21.0" layoutY="52.0" mnemonicParsing="false" onAction="#loadFileButtonListener" text="Load File">
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                  </Button>
+                      <TextArea fx:id="textFilePath" layoutX="108.0" layoutY="36.0" prefHeight="35.0" prefWidth="506.0">
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                  </TextArea>
+                      <TabPane fx:id="allTabs" layoutX="2.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                              <Tab fx:id="machineTab" text="Machine">
+                           <content>
+                              <fx:include fx:id="machinePageComponent" source="../machinePage/machinePage.fxml" />
+                           </content></Tab>
+                              <Tab fx:id="contestTab" text="Contest">
+                                  <content>
+                                      <fx:include fx:id="contestPageComponent" source="../contestPage/contest.fxml" />
+                                  </content></Tab>
+                          </tabs>
+                      </TabPane>
+                  <Label fx:id="labelFileSuccess" layoutX="650.0" layoutY="49.0" prefHeight="21.0" prefWidth="185.0" textFill="#10f22e">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameOfLoggedUserLabel" layoutX="776.0" layoutY="11.0" prefHeight="20.0" prefWidth="200.0">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  </children>
+              </AnchorPane>
+         </items>
+      </SplitPane>
+    </content>
+</ScrollPane>

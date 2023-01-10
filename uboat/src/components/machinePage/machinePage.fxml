@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane prefHeight="642.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="components.machinePage.MachinePageController">
+    <content>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0">
+            <children>
+                <Label alignment="TOP_CENTER" layoutX="113.0" layoutY="14.0" prefHeight="27.0" prefWidth="166.0" text="Machine Details">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="machineDetailsText" editable="false" layoutX="17.0" layoutY="52.0" prefHeight="120.0" prefWidth="358.0" />
+                <ChoiceBox fx:id="reflectorChoiceBox" layoutX="463.0" layoutY="201.0" prefHeight="25.0" prefWidth="50.0" />
+                <ChoiceBox fx:id="plugsOneChoiceBox" layoutX="731.0" layoutY="214.0" prefHeight="25.0" prefWidth="50.0" />
+                <Button fx:id="setRandomCode" layoutX="491.0" layoutY="78.0" mnemonicParsing="false" onAction="#setRandomCodeListener" prefHeight="50.0" prefWidth="243.0" text="Set Random Code">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="setCodeManuallyButton" layoutX="357.0" layoutY="509.0" mnemonicParsing="false" onAction="#setCodeManuallyListener" prefHeight="50.0" prefWidth="243.0" text="Set the machine manually">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Label layoutX="36.0" layoutY="178.0" text="Rotors" />
+                <Label layoutX="94.0" layoutY="103.0" />
+                <Label layoutX="719.0" layoutY="190.0" text="Side one plug" />
+                <Label layoutX="464.0" layoutY="178.0" text="Reflector" />
+                <Button fx:id="addReflectorButton" layoutX="520.0" layoutY="242.0" mnemonicParsing="false" onAction="#addReflectorButtonListener" prefHeight="30.0" prefWidth="129.0" text="Add Reflector" />
+                <ChoiceBox fx:id="startingPositionChoiceBox" layoutX="107.0" layoutY="201.0" prefHeight="25.0" prefWidth="50.0" />
+                <Label layoutX="88.0" layoutY="178.0" text="Starting position" />
+                <Button fx:id="clearRotorsButton" layoutX="116.0" layoutY="425.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearRotorsButtonListener" prefHeight="30.0" prefWidth="120.0" text="Clear All" />
+                <TextArea fx:id="reflectorShowingArea" editable="false" layoutX="463.0" layoutY="238.0" prefHeight="38.0" prefWidth="35.0" />
+                <Button fx:id="clearReflectorButton" layoutX="432.0" layoutY="442.0" mnemonicParsing="false" onAction="#clearReflectorButtonListener" prefHeight="30.0" prefWidth="180.0" text="Remove reflector" />
+                <Label layoutX="819.0" layoutY="190.0" text="Side two plug" />
+                <ChoiceBox fx:id="plugsTwoChoiceBox" layoutX="831.0" layoutY="214.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="50.0" />
+                <Button fx:id="addPlugButton" layoutX="831.0" layoutY="257.0" mnemonicParsing="false" onAction="#addPlugButtonListener" prefHeight="30.0" prefWidth="100.0" text="Add plug" />
+                <Button fx:id="clearPlugsButton" layoutX="721.0" layoutY="427.0" mnemonicParsing="false" onAction="#clearPlugsButtonListener" prefHeight="30.0" prefWidth="120.0" text="Clear All" />
+                <TextArea fx:id="rotorsShowingTextArea" editable="false" layoutX="16.0" layoutY="235.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="116.0" />
+                <TextArea fx:id="plugBoardShowingArea" editable="false" layoutX="687.0" layoutY="251.0" prefHeight="50.0" prefWidth="136.0" />
+                <ChoiceBox fx:id="rotorsChoiceBox" layoutX="24.0" layoutY="198.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="50.0" />
+                <Button fx:id="addRotorButton" layoutX="135.0" layoutY="235.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addRotorListener" prefHeight="30.0" prefWidth="99.0" text="Add Rotor" />
+                <Button fx:id="removeRotorButton" layoutX="246.0" layoutY="236.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeRotorButtonListener" prefHeight="30.0" prefWidth="129.0" text="Remove Rotor" />
+                <HBox fx:id="HBoxRotors" layoutX="12.0" layoutY="283.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="137.0" prefWidth="345.0">
+                    <children>
+                        <ScrollPane>
+                            <content>
+                                <ListView fx:id="listViewRotors" prefHeight="137.0" prefWidth="345.0" />
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </HBox>
+                <HBox fx:id="HBoxReflector" layoutX="430.0" layoutY="285.0" prefHeight="142.0" prefWidth="179.0">
+                    <children>
+                        <ListView fx:id="listViewReflector" prefHeight="145.0" prefWidth="205.0" />
+                    </children>
+                </HBox>
+                <HBox fx:id="HBoxPlugBoard" layoutX="709.0" layoutY="310.0" prefHeight="115.0" prefWidth="145.0">
+                    <children>
+                        <ListView fx:id="listViewPlugBoard" prefHeight="102.0" prefWidth="159.0" />
+                    </children>
+                </HBox>
+                <Button fx:id="removePlugButton" layoutX="881.0" layoutY="310.0" mnemonicParsing="false" onAction="#removePlugButtonListener" text="Remove Plug" />
+            </children>
+        </AnchorPane>
+    </content>
+</ScrollPane>

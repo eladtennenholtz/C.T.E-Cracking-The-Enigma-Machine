@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: UiMain
+Class-Path: dto.jar machine.jar engine.jar
+
